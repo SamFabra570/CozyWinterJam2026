@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     
     private Vector2 inputData;
     private CharacterController controller;
+    public Animator animator;
 
     private PlayerInput inputMap;
     
@@ -29,7 +30,7 @@ public class PlayerController : MonoBehaviour
         Instance = this;
         
         controller = gameObject.AddComponent<CharacterController>();
-        //animator = gameObject.GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
         //rend = GetComponent<Renderer>();
         
         inputMap = new PlayerInput();
@@ -37,11 +38,13 @@ public class PlayerController : MonoBehaviour
         inputMap.Player.Movement.performed += Movement_performed =>
         {
             inputData = Movement_performed.ReadValue<Vector2>();
+            animator.SetBool("isWalking", true);
         };
         
         inputMap.Player.Movement.canceled += Movement_canceled =>
         {
             inputData = Movement_canceled.ReadValue<Vector2>();
+            animator.SetBool("isWalking", false);
         };
 
         inputMap.Player.Interact.performed += context =>
@@ -51,12 +54,6 @@ public class PlayerController : MonoBehaviour
             
             Interact(interactable);
         };
-    }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
     }
 
     // Update is called once per frame
