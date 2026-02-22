@@ -6,10 +6,12 @@ public class PlayerController : MonoBehaviour
 {
     public static PlayerController Instance;
     
+    
     private Vector2 inputData;
     private CharacterController controller;
     public Animator animator;
-
+    [SerializeField] public TextManager TextManager;
+    
     private PlayerInput inputMap;
     
     [SerializeField] private float speed;
@@ -28,6 +30,7 @@ public class PlayerController : MonoBehaviour
         }
         
         Instance = this;
+        TextManager = new TextManager();
         
         controller = gameObject.AddComponent<CharacterController>();
         //animator = GetComponent<Animator>();

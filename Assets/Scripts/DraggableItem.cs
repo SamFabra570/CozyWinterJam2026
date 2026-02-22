@@ -1,10 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     public Image image;
+    [SerializeField] public TextMeshProUGUI text;
     [HideInInspector] public Transform parentAfterDrag;
     
     public void OnBeginDrag(PointerEventData eventData)

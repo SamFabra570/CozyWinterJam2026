@@ -438,6 +438,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableItem
   image: {fileID: 86279411}
+  text: {fileID: 473217183}
   parentAfterDrag: {fileID: 0}
 --- !u!114 &86279411 stripped
 MonoBehaviour:
@@ -501,6 +502,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d48a3e234da28a540930c2605f7516d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TextOptionSlot
+  slotNumber: 3
+  text: {fileID: 0}
 --- !u!114 &113995453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -724,6 +727,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d48a3e234da28a540930c2605f7516d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TextOptionSlot
+  slotNumber: 1
+  text: {fileID: 0}
 --- !u!114 &243682407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -923,6 +928,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 289375253}
   m_CullTransparentMesh: 1
+--- !u!114 &305023387 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3698237103448835756, guid: 53c88a22665f78744a60a67e5daf6bcb, type: 3}
+  m_PrefabInstance: {fileID: 1739499806}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -1354,6 +1370,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3698237103448835756, guid: 53c88a22665f78744a60a67e5daf6bcb, type: 3}
+      propertyPath: m_text
+      value: e
+      objectReference: {fileID: 0}
+    - target: {fileID: 3698237103448835756, guid: 53c88a22665f78744a60a67e5daf6bcb, type: 3}
       propertyPath: m_fontSize
       value: 30
       objectReference: {fileID: 0}
@@ -1473,6 +1493,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1961240396}
   m_SourcePrefab: {fileID: 100100000, guid: 53c88a22665f78744a60a67e5daf6bcb, type: 3}
+--- !u!114 &473217183 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3698237103448835756, guid: 53c88a22665f78744a60a67e5daf6bcb, type: 3}
+  m_PrefabInstance: {fileID: 1956447963}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &490468481
 GameObject:
   m_ObjectHideFlags: 0
@@ -1611,6 +1642,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d48a3e234da28a540930c2605f7516d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TextOptionSlot
+  slotNumber: 0
+  text: {fileID: 0}
 --- !u!114 &573388646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1946,6 +1979,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d48a3e234da28a540930c2605f7516d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TextOptionSlot
+  slotNumber: 2
+  text: {fileID: 0}
 --- !u!114 &669608346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2225,6 +2260,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d48a3e234da28a540930c2605f7516d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TextOptionSlot
+  slotNumber: 0
+  text: {fileID: 0}
 --- !u!114 &836242417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2733,6 +2770,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d48a3e234da28a540930c2605f7516d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TextOptionSlot
+  slotNumber: 0
+  text: {fileID: 0}
 --- !u!114 &1077751660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3006,6 +3045,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableItem
   image: {fileID: 1133492356}
+  text: {fileID: 1938727646}
   parentAfterDrag: {fileID: 0}
 --- !u!114 &1133492356 stripped
 MonoBehaviour:
@@ -3095,6 +3135,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d76fa45adb822264e9fd7d83d3fad74e, type: 3}
+--- !u!114 &1157923962 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3698237103448835756, guid: 53c88a22665f78744a60a67e5daf6bcb, type: 3}
+  m_PrefabInstance: {fileID: 467643428}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &1167194875
 GameObject:
   m_ObjectHideFlags: 0
@@ -3131,6 +3182,17 @@ Transform:
   - {fileID: 1742777076}
   m_Father: {fileID: 1796882240}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1214588050 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3698237103448835756, guid: 53c88a22665f78744a60a67e5daf6bcb, type: 3}
+  m_PrefabInstance: {fileID: 2065420156}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &1265785900
 GameObject:
   m_ObjectHideFlags: 0
@@ -3269,6 +3331,10 @@ PrefabInstance:
     - target: {fileID: 551544262581718207, guid: 53c88a22665f78744a60a67e5daf6bcb, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0.0000009536743
+      objectReference: {fileID: 0}
+    - target: {fileID: 3698237103448835756, guid: 53c88a22665f78744a60a67e5daf6bcb, type: 3}
+      propertyPath: m_text
+      value: c
       objectReference: {fileID: 0}
     - target: {fileID: 3698237103448835756, guid: 53c88a22665f78744a60a67e5daf6bcb, type: 3}
       propertyPath: m_fontSize
@@ -3496,6 +3562,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d48a3e234da28a540930c2605f7516d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TextOptionSlot
+  slotNumber: 0
+  text: {fileID: 0}
 --- !u!1 &1395304080
 GameObject:
   m_ObjectHideFlags: 0
@@ -3609,6 +3677,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d48a3e234da28a540930c2605f7516d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TextOptionSlot
+  slotNumber: 0
+  text: {fileID: 0}
 --- !u!1 &1398717406
 GameObject:
   m_ObjectHideFlags: 0
@@ -3870,6 +3940,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableItem
   image: {fileID: 1459626921}
+  text: {fileID: 1214588050}
   parentAfterDrag: {fileID: 0}
 --- !u!114 &1459626921 stripped
 MonoBehaviour:
@@ -4108,6 +4179,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d48a3e234da28a540930c2605f7516d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TextOptionSlot
+  slotNumber: 0
+  text: {fileID: 0}
 --- !u!1 &1529638318
 GameObject:
   m_ObjectHideFlags: 0
@@ -4655,6 +4728,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableItem
   image: {fileID: 1599545896}
+  text: {fileID: 1936210146}
   parentAfterDrag: {fileID: 0}
 --- !u!114 &1599545896 stripped
 MonoBehaviour:
@@ -9638,6 +9712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableItem
   image: {fileID: 1728412579}
+  text: {fileID: 305023387}
   parentAfterDrag: {fileID: 0}
 --- !u!114 &1728412579 stripped
 MonoBehaviour:
@@ -9677,6 +9752,10 @@ PrefabInstance:
     - target: {fileID: 1797137473402448635, guid: 53c88a22665f78744a60a67e5daf6bcb, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3698237103448835756, guid: 53c88a22665f78744a60a67e5daf6bcb, type: 3}
+      propertyPath: m_text
+      value: b
       objectReference: {fileID: 0}
     - target: {fileID: 3698237103448835756, guid: 53c88a22665f78744a60a67e5daf6bcb, type: 3}
       propertyPath: m_fontSize
@@ -10042,6 +10121,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   animator: {fileID: 741523564}
+  TextManager:
+    Word1: n
+    Word2: n
+    Word3: n
+    GeneratedText: nnn
+    TextsCollection:
+    - sample text
   speed: 5
   freezePlayer: 0
 --- !u!1 &1797777929
@@ -10439,6 +10525,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1892271135}
   m_CullTransparentMesh: 1
+--- !u!114 &1936210146 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3698237103448835756, guid: 53c88a22665f78744a60a67e5daf6bcb, type: 3}
+  m_PrefabInstance: {fileID: 1674855210163842275}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &1938727646 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3698237103448835756, guid: 53c88a22665f78744a60a67e5daf6bcb, type: 3}
+  m_PrefabInstance: {fileID: 1336330811}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &1956447963
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10466,6 +10574,10 @@ PrefabInstance:
     - target: {fileID: 1797137473402448635, guid: 53c88a22665f78744a60a67e5daf6bcb, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3698237103448835756, guid: 53c88a22665f78744a60a67e5daf6bcb, type: 3}
+      propertyPath: m_text
+      value: d
       objectReference: {fileID: 0}
     - target: {fileID: 3698237103448835756, guid: 53c88a22665f78744a60a67e5daf6bcb, type: 3}
       propertyPath: m_fontSize
@@ -10602,6 +10714,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableItem
   image: {fileID: 1961240397}
+  text: {fileID: 1157923962}
   parentAfterDrag: {fileID: 0}
 --- !u!114 &1961240397 stripped
 MonoBehaviour:
@@ -10776,6 +10889,10 @@ PrefabInstance:
       value: 0.0000009536743
       objectReference: {fileID: 0}
     - target: {fileID: 3698237103448835756, guid: 53c88a22665f78744a60a67e5daf6bcb, type: 3}
+      propertyPath: m_text
+      value: f
+      objectReference: {fileID: 0}
+    - target: {fileID: 3698237103448835756, guid: 53c88a22665f78744a60a67e5daf6bcb, type: 3}
       propertyPath: m_fontSize
       value: 30
       objectReference: {fileID: 0}
@@ -10922,6 +11039,10 @@ PrefabInstance:
     - target: {fileID: 1797137473402448635, guid: 53c88a22665f78744a60a67e5daf6bcb, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3698237103448835756, guid: 53c88a22665f78744a60a67e5daf6bcb, type: 3}
+      propertyPath: m_text
+      value: a
       objectReference: {fileID: 0}
     - target: {fileID: 3698237103448835756, guid: 53c88a22665f78744a60a67e5daf6bcb, type: 3}
       propertyPath: m_fontSize
@@ -11141,6 +11262,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d48a3e234da28a540930c2605f7516d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TextOptionSlot
+  slotNumber: 0
+  text: {fileID: 1936210146}
 --- !u!1001 &8713321539273973783
 PrefabInstance:
   m_ObjectHideFlags: 0
