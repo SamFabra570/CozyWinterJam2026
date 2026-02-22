@@ -3,7 +3,12 @@ guid: 083548c6a4a40da4588fee8515b277c3
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hoja'_
+    second: {fileID: 2100000, guid: 92f5ca10ff03c36419d46cd8ba440c0c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
