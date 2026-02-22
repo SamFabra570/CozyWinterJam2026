@@ -10697,9 +10697,12 @@ MonoBehaviour:
     Word1: n
     Word2: n
     Word3: n
-    GeneratedText: nnn
-    TextsCollection:
-    - sample text
+    Word4: n
+    Word5: n
+    Word6: n
+    Word7: n
+    Word8: n
+    Word9: n
   cameraTransform: {fileID: 330585546}
   speed: 5
   rotationSpeed: 10
@@ -11323,6 +11326,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!1001 &1961461389
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 083548c6a4a40da4588fee8515b277c3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 39.47498
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 083548c6a4a40da4588fee8515b277c3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.8264704
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 083548c6a4a40da4588fee8515b277c3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -88.001144
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 083548c6a4a40da4588fee8515b277c3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 083548c6a4a40da4588fee8515b277c3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 083548c6a4a40da4588fee8515b277c3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 083548c6a4a40da4588fee8515b277c3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 083548c6a4a40da4588fee8515b277c3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 083548c6a4a40da4588fee8515b277c3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 083548c6a4a40da4588fee8515b277c3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2090608591832345471, guid: 083548c6a4a40da4588fee8515b277c3, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: d8cfd6fa71f87394884c1e3b3827ae83, type: 2}
+    - target: {fileID: 919132149155446097, guid: 083548c6a4a40da4588fee8515b277c3, type: 3}
+      propertyPath: m_Name
+      value: Arbol_a
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 083548c6a4a40da4588fee8515b277c3, type: 3}
 --- !u!1 &1965369834
 GameObject:
   m_ObjectHideFlags: 0
@@ -25687,3 +25751,4 @@ SceneRoots:
   - {fileID: 1632967812}
   - {fileID: 4590392}
   - {fileID: 543450651656722882}
+  - {fileID: 1961461389}

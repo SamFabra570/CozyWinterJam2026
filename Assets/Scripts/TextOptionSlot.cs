@@ -27,7 +27,31 @@ public class TextOptionSlot : MonoBehaviour, IDropHandler
             {
                 PlayerController.Instance.TextManager.Word3 = text.text;
             }
-            PlayerController.Instance.TextManager.GenerateText();
+            else if (slotNumber == 4)
+            {
+                PlayerController.Instance.TextManager.Word4 = text.text;
+            }
+            else if (slotNumber == 5)
+            {
+                PlayerController.Instance.TextManager.Word5 = text.text;
+            }
+            else if (slotNumber == 6)
+            {
+                PlayerController.Instance.TextManager.Word6 = text.text;
+            }
+            else if (slotNumber == 7)
+            {
+                PlayerController.Instance.TextManager.Word7 = text.text;
+            }
+            else if (slotNumber == 8)
+            {
+                PlayerController.Instance.TextManager.Word8 = text.text;
+            }
+            else if (slotNumber == 9)
+            {
+                PlayerController.Instance.TextManager.Word9 = text.text;
+            }
+            
 
 
         }
