@@ -38,6 +38,7 @@ public class BonfireUIManager : MonoBehaviour
                 break;
             case ("Close"):
                 PlayerController.Instance.freezePlayer = false;
+                PlayerController.Instance.LockCursor();
                 bonfireCanvas.SetActive(false);
                 break;
         }

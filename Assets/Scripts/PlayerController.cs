@@ -13,8 +13,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public TextManager TextManager;
     
     private PlayerInput inputMap;
+
+    [SerializeField] private Transform cameraTransform;
     
     [SerializeField] private float speed;
+    [SerializeField] private float rotationSpeed = 10f;
     private float yVelocity;
 
     private GameObject interactable;
@@ -59,6 +62,11 @@ public class PlayerController : MonoBehaviour
         };
     }
 
+    private void Start()
+    {
+        LockCursor();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -68,7 +76,16 @@ public class PlayerController : MonoBehaviour
 
     private void MovePlayer()
     {
-        Vector3 rawDir = new Vector3(inputData.x, 0, inputData.y);
+        Vector3 camForward = cameraTransform.forward;
+        Vector3 camRight = cameraTransform.right;
+
+        camForward.y = 0;
+        camRight.y = 0;
+
+        camForward.Normalize();
+        camRight.Normalize();
+
+        Vector3 rawDir = camForward * inputData.y + camRight * inputData.x;
 
         if (rawDir.magnitude > 1f)
             rawDir.Normalize();
@@ -81,12 +98,23 @@ public class PlayerController : MonoBehaviour
         Vector3 move = rawDir * speed;
         move.y = yVelocity;
 
+        if (rawDir.sqrMagnitude > 0.001f)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(rawDir);
+            transform.rotation = Quaternion.Slerp(
+                transform.rotation,
+                targetRotation,
+                rotationSpeed * Time.deltaTime
+            );
+        }
+        
         controller.Move(move * Time.deltaTime);
     }
 
     private void Interact(GameObject obj)
     {
         Debug.Log("Enter bonfire");
+        UnlockCursor();
         BonfireUIManager.Instance.ToggleBonfire("Open");
     }
 
@@ -106,6 +134,18 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Bonfire unavailable");
             interactable = null;
         }
+    }
+    
+    public void LockCursor()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
+    private void UnlockCursor()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
 
