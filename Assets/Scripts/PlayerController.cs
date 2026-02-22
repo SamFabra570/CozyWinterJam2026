@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController Instance;
-    
-    
+
+    public GameObject interactText;
     private Vector2 inputData;
     private CharacterController controller;
     public Animator animator;
@@ -122,6 +122,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("Bonfire"))
         {
+            interactText.SetActive(true);
             Debug.Log("Bonfire available");
             interactable = other.gameObject;
         }
@@ -131,6 +132,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("Bonfire"))
         {
+            interactText.SetActive(false);
             Debug.Log("Bonfire unavailable");
             interactable = null;
         }

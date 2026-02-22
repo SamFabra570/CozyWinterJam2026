@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
@@ -8,7 +9,14 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public Image image;
     [SerializeField] public TextMeshProUGUI text;
     [HideInInspector] public Transform parentAfterDrag;
-    
+
+    public Transform originalParent;
+
+    private void Start()
+    {
+        originalParent = transform.parent;
+    }
+
     public void OnBeginDrag(PointerEventData eventData)
     {
         Debug.Log("Begin drag");
@@ -29,5 +37,11 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         Debug.Log("End drag");
         transform.SetParent(parentAfterDrag);
         image.raycastTarget = true;
+    }
+
+    public void ResetPosition()
+    {
+        transform.SetParent(originalParent);
+        transform.localPosition = Vector3.zero;
     }
 }
