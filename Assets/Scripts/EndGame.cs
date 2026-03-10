@@ -5,23 +5,14 @@ public class EndGame : MonoBehaviour
 {
     public GameObject finalBackground;
     public GameObject bonfireCanvas;
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter(Collider other)
     {
         finalBackground.SetActive(true);
         bonfireCanvas.SetActive(true);
         PlayerController.Instance.freezePlayer = true;
+        
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }

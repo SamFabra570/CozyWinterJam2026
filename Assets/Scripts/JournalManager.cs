@@ -46,6 +46,7 @@ public class JournalManager : MonoBehaviour
         if (other.CompareTag("Bonfire"))
         {
             currentBonfire = other.gameObject;
+            
             Debug.Log("entered" + currentBonfire.name);
         }
         
@@ -57,8 +58,7 @@ public class JournalManager : MonoBehaviour
         {
             if (currentBonfire != null) 
                 Debug.Log("exited" + currentBonfire.name);
-        
-            lastBonfire = currentBonfire;
+            
             currentBonfire = null;
             currentTheme = null;
         }
@@ -77,72 +77,67 @@ public class JournalManager : MonoBehaviour
         {
             case "Community":
                 communityTheme.SetActive(true);
-                SetPage(currentBonfire, communityTheme);
+                SetPage(communityTheme);
                 break;
             case "My day":
                 myDayTheme.SetActive(true);
-                SetPage(currentBonfire, myDayTheme);
+                SetPage(myDayTheme);
                 break;
             case "My journey":
                 myJourneyTheme.SetActive(true);
-                SetPage(currentBonfire, myJourneyTheme);
+                SetPage(myJourneyTheme);
                 break;
             
         }
     }
 
-    private void SetPage(GameObject currentBonfire, GameObject themePage)
+    private void SetPage(GameObject themePage)
     {
-        if (currentBonfire.name == ("Bonfire1"))
+        switch (currentBonfire.name)
         {
-            page1 = themePage;
-            theme1 = currentTheme;
-        }
-        
-        if (currentBonfire.name == ("Bonfire2"))
-        {
-            page2 = themePage;
-            theme2 = currentTheme;
-        }
-        
-        if (currentBonfire.name == ("Bonfire3"))
-        {
-            page3 = themePage;
-            theme3 = currentTheme;
+            case "Bonfire1":
+                page1 = themePage;
+                theme1 = currentTheme;
+                break;
+            case "Bonfire2":
+                page2 = themePage;
+                theme2 = currentTheme;
+                break;
+            case "Bonfire3":
+                page3 = themePage;
+                theme3 = currentTheme;
+                break;
         }
     }
 
-    public void ResetEntry()
+    private void ResetEntry()
     {
-        if (lastBonfire.name == ("Bonfire1"))
-        {
-            //Debug.Log("trying to reset" + lastBonfire.name);
-            page1.SetActive(false);
-            theme1.SetActive(false);
-            
-        }
-        
-        if (lastBonfire.name == ("Bonfire2"))
-        {
-            page2.SetActive(false);
-            theme2.SetActive(false);
-        }
-        
-        if (lastBonfire.name == ("Bonfire3"))
-        {
-            page3.SetActive(false);
-            theme3.SetActive(false);
-        }
-        
         if (currentTheme != null)
         {
             currentTheme.SetActive(false);
             currentTheme = null;
         }
+        
+        switch (lastBonfire.name)
+        {
+            case "Bonfire1":
+                page1.SetActive(false);
+                theme1.SetActive(false);
+                break;
+            case "Bonfire2":
+                page2.SetActive(false);
+                theme2.SetActive(false);
+                break;
+            case "Bonfire3":
+                page3.SetActive(false);
+                theme3.SetActive(false);
+                break;
+        }
     }
     
     public bool IsNewBonfire()
     {
+        //If not a new bonfire
         if (currentBonfire == lastBonfire)
         {
             return false;
@@ -154,9 +149,11 @@ public class JournalManager : MonoBehaviour
             BonfireUIManager.Instance.ResetThemePositions();
         }
         
+        lastBonfire = currentBonfire;
         return true;
     }
 
+    //Show pages at the end
     public void ShowPage(int entryNum)
     {
         switch (entryNum)

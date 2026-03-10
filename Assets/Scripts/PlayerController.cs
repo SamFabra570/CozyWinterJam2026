@@ -10,7 +10,6 @@ public class PlayerController : MonoBehaviour
     private Vector2 inputData;
     private CharacterController controller;
     public Animator animator;
-    [SerializeField] public TextManager TextManager;
     
     private PlayerInput inputMap;
 
@@ -33,11 +32,8 @@ public class PlayerController : MonoBehaviour
         }
         
         Instance = this;
-        TextManager = new TextManager();
         
         controller = gameObject.AddComponent<CharacterController>();
-        //animator = GetComponent<Animator>();
-        //rend = GetComponent<Renderer>();
         
         inputMap = new PlayerInput();
         
@@ -58,7 +54,7 @@ public class PlayerController : MonoBehaviour
             if (interactable == null)
                 return;
             
-            Interact(interactable);
+            Interact();
         };
     }
 
@@ -111,7 +107,7 @@ public class PlayerController : MonoBehaviour
         controller.Move(move * Time.deltaTime);
     }
 
-    private void Interact(GameObject obj)
+    private void Interact()
     {
         Debug.Log("Enter bonfire");
         UnlockCursor();
@@ -121,8 +117,6 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //bool hasVisited = JournalManager.Instance.HasVisitedBonfire(other.gameObject);
-        
         if (other.CompareTag("Bonfire"))
         {
             interactText.SetActive(true);

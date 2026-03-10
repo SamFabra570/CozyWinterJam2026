@@ -47,14 +47,17 @@ public class BonfireUIManager : MonoBehaviour
                 bonfireCanvas.SetActive(true);
                 journalScreenUI.SetActive(true);
                 
-                AudioManager.Instance.PlayCampfireBGM();
+                if (AudioManager.Instance != null) 
+                    AudioManager.Instance.PlayCampfireBGM();
                 break;
+            
             case ("Close"):
                 PlayerController.Instance.freezePlayer = false;
                 PlayerController.Instance.LockCursor();
                 bonfireCanvas.SetActive(false);
                 
-                AudioManager.Instance.PlayJourneyBGM();
+                if (AudioManager.Instance != null) 
+                    AudioManager.Instance.PlayJourneyBGM();
                 break;
         }
         
@@ -80,5 +83,10 @@ public class BonfireUIManager : MonoBehaviour
                 returnToJourneyButton.SetActive(true);
                 break;
         }
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }
