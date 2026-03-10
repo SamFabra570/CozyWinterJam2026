@@ -6,13 +6,18 @@ public class JournalManager : MonoBehaviour
     public static JournalManager Instance;
     
     public GameObject currentBonfire;
+    public GameObject lastBonfire;
     public GameObject currentTheme;
 
     public GameObject themeSlot;
 
-    private GameObject page1;
-    private GameObject page2;
-    private GameObject page3;
+    public GameObject page1;
+    public GameObject page2;
+    public GameObject page3;
+
+    public GameObject page1Slots;
+    public GameObject page2Slots;
+    public GameObject page3Slots;
     
     private GameObject theme1;
     private GameObject theme2;
@@ -38,13 +43,25 @@ public class JournalManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        currentBonfire = other.gameObject;
+        if (other.CompareTag("Bonfire"))
+        {
+            currentBonfire = other.gameObject;
+            Debug.Log("entered" + currentBonfire.name);
+        }
+        
     }
 
     private void OnTriggerExit(Collider other)
     {
-        currentBonfire = null;
-        currentTheme = null;
+        if (other.CompareTag("Bonfire"))
+        {
+            if (currentBonfire != null) 
+                Debug.Log("exited" + currentBonfire.name);
+        
+            lastBonfire = currentBonfire;
+            currentBonfire = null;
+            currentTheme = null;
+        }
     }
 
     public void ShowTexts(string theme, GameObject themeText)
@@ -55,8 +72,6 @@ public class JournalManager : MonoBehaviour
         
         aboutPage.SetActive(false);
         entryPage.SetActive(true);
-        
-        //themeText.SetActive(true);
         
         switch (theme)
         {
@@ -99,25 +114,71 @@ public class JournalManager : MonoBehaviour
 
     public void ResetEntry()
     {
-        currentTheme.SetActive(false);
-        currentTheme = null;
-        
-        if (currentBonfire.name == ("Bonfire1"))
+        if (lastBonfire.name == ("Bonfire1"))
         {
+            //Debug.Log("trying to reset" + lastBonfire.name);
             page1.SetActive(false);
-            //theme1 = currentTheme;
+            theme1.SetActive(false);
+            
         }
         
-        if (currentBonfire.name == ("Bonfire2"))
+        if (lastBonfire.name == ("Bonfire2"))
         {
             page2.SetActive(false);
-            //theme2 = currentTheme;
+            theme2.SetActive(false);
         }
         
-        if (currentBonfire.name == ("Bonfire3"))
+        if (lastBonfire.name == ("Bonfire3"))
         {
             page3.SetActive(false);
-            //theme3 = currentTheme;
+            theme3.SetActive(false);
+        }
+        
+        if (currentTheme != null)
+        {
+            currentTheme.SetActive(false);
+            currentTheme = null;
+        }
+    }
+    
+    public bool IsNewBonfire()
+    {
+        if (currentBonfire == lastBonfire)
+        {
+            return false;
+        }
+
+        if (lastBonfire != null)
+        {
+            ResetEntry();
+            BonfireUIManager.Instance.ResetThemePositions();
+        }
+        
+        return true;
+    }
+
+    public void ShowPage(int entryNum)
+    {
+        switch (entryNum)
+        {
+            case 1:
+                theme1.SetActive(true);
+                page1.SetActive(true);
+                break;
+            case 2:
+                theme1.SetActive(false);
+                page1.SetActive(false);
+                
+                theme2.SetActive(true);
+                page2.SetActive(true);
+                break;
+            case 3:
+                theme2.SetActive(false);
+                page2.SetActive(false);
+                
+                theme3.SetActive(true);
+                page3.SetActive(true);
+                break;
         }
     }
 }

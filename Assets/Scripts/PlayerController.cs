@@ -115,11 +115,14 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("Enter bonfire");
         UnlockCursor();
+        
         BonfireUIManager.Instance.ToggleBonfire("Open");
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        //bool hasVisited = JournalManager.Instance.HasVisitedBonfire(other.gameObject);
+        
         if (other.CompareTag("Bonfire"))
         {
             interactText.SetActive(true);

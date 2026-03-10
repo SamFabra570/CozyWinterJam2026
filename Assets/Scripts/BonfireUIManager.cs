@@ -14,8 +14,6 @@ public class BonfireUIManager : MonoBehaviour
     public DraggableItem theme2;
     public DraggableItem theme3;
 
-    
-
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -40,24 +38,29 @@ public class BonfireUIManager : MonoBehaviour
         {
             case ("Open"):
                 PlayerController.Instance.freezePlayer = true;
+
+                if (JournalManager.Instance.IsNewBonfire())
+                {
+                    JournalManager.Instance.aboutPage.SetActive(true);
+                }
+                
                 bonfireCanvas.SetActive(true);
-                JournalManager.Instance.aboutPage.SetActive(true);
                 journalScreenUI.SetActive(true);
+                
+                AudioManager.Instance.PlayCampfireBGM();
                 break;
             case ("Close"):
                 PlayerController.Instance.freezePlayer = false;
                 PlayerController.Instance.LockCursor();
-                JournalManager.Instance.ResetEntry();
-                JournalManager.Instance.currentBonfire = null;
-                JournalManager.Instance.currentTheme = null;
-                ResetThemePositions();
                 bonfireCanvas.SetActive(false);
+                
+                AudioManager.Instance.PlayJourneyBGM();
                 break;
         }
         
     }
 
-    private void ResetThemePositions()
+    public void ResetThemePositions()
     {
         theme1.ResetPosition();
         theme2.ResetPosition();

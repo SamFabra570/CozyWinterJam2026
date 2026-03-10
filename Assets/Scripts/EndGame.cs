@@ -4,6 +4,7 @@ using UnityEngine;
 public class EndGame : MonoBehaviour
 {
     public GameObject finalBackground;
+    public GameObject bonfireCanvas;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,7 +20,8 @@ public class EndGame : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        PlayerController.Instance.freezePlayer = true;
         finalBackground.SetActive(true);
+        bonfireCanvas.SetActive(true);
+        PlayerController.Instance.freezePlayer = true;
     }
 }
